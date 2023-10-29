@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning setInterval</title>
+</head>
+<body>
+    <h1>Harsh Kumar Kankariya</h1>
+    <button id="stop">stop</button>
+
+</body>
+<script>
+
+    // using timeout function and  handler in this without passing any string
+    // const changeTitle=function(str){
+    //     document.querySelector('h1').innerHTML='Thrive Coder';
+    // }
+    // setTimeout(changeTitle,3000);
+
+    // By passing string in this also work
+    const changeTitle=function(str){
+        document.querySelector('h1').innerHTML=str;
+    }
+    const timeout=setTimeout(changeTitle,3000,"try to change by input");
+
+
+    // now we will see the use of clearTimeout funtion 
+    // clearTimeout(timeout); // basicall it will remove all queued element of settimeout
+
+
+    // use of clearTimeout using stop function whenever we want to stop this call
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(timeout);
+        console.log('stopped');
+    })
+</script>
+</html>
